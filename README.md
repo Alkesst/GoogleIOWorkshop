@@ -11,8 +11,8 @@ Insertar link a las slides.
 ```
 
 ##### Requirements
-    - Little knowledge about python.
-    - [Python-Telegram-Bot API](https://python-telegram-bot.org).
+- Little knowledge about python.
+- [Python-Telegram-Bot API](https://python-telegram-bot.org).
 
 
 ##### How to install
