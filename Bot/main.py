@@ -6,7 +6,7 @@ from Bot import message_filters
 
 def main():
     google_io = message_filters.GoogleIOFilter()
-    updater = Updater('526743804:AAFEIm7AlWlqULolf5S2MYi-OXFN811BGoI')
+    updater = Updater('TOKEN')
     updater.dispatcher.add_handler(CommandHandler("hello", useful_methods.hello))
     updater.dispatcher.add_handler(CommandHandler("start", useful_methods.start))
     updater.dispatcher.add_handler(CommandHandler("secret", useful_methods.secret, pass_args=True))
