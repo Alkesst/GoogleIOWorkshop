@@ -1,12 +1,11 @@
 # made by Alkesst using python3.6 and python-telegram-bot
 from telegram.ext import Updater, CommandHandler, MessageHandler, InlineQueryHandler
-from Bot import useful_methods
-from Bot import message_filters
+from Bot import useful_methods, message_filters, token
 
 
 def main():
     google_io = message_filters.GoogleIOFilter()
-    updater = Updater('TOKEN')
+    updater = Updater(token.get_token()["telegram"])
     updater.dispatcher.add_handler(CommandHandler("hello", useful_methods.hello))
     updater.dispatcher.add_handler(CommandHandler("start", useful_methods.start))
     updater.dispatcher.add_handler(CommandHandler("secret", useful_methods.secret, pass_args=True))
