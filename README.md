@@ -7,16 +7,13 @@ GDG Malaga's retransmission of the Google I/O the past
 8th of May. Before the retransmission I did a little workshop about
 Bots made with Python.
 
-Link to the workshop slides:
-```
-Insertar link a las slides.
-```
+Link to the workshop slides: Soon!
 
 ##### Requirements
 - Python or Docker
 
 ##### How to install
-Just run this command ` pip install -r requirements.txt ` and all done ;)
+Just run this command ` pip install --no-cache-dir -r requirements.txt ` and all done ;)
 
 ### Docker time!
 Before creating the image with docker, we need to create the
@@ -28,11 +25,13 @@ BOT_PATH=*USE A CUSTOM PATH*
 
 By default the BOT_PATH is set to `.`
 
-First create the image with `docker image build -t *tag_name*` .
+First create the image with `docker image build -t *tag_name* .`
  and will create an image from the Dockerfile.
+ Do not forget the dot at the final of the docker image build ;)
+
+ Yeah, I forgot that dot a couple of times ;).
 
 Once created your image, just run with
-`docker run -it --rm -v *pytel_files_path*:/pytel_stuff
---env-file .env *tag_name*`.
+`docker run -it --rm --env-file .env *tag_name*`.
 
 

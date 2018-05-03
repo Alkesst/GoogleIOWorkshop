@@ -1,3 +1,5 @@
+from time import sleep
+
 from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 
@@ -41,3 +43,15 @@ def inline_caps(bot, update):
     )
     bot.answer_inline_query(update.inline_query.id, results)
 
+
+def echo_callback(bot, update, args):
+    user_says = " ".join(args)
+    update.message.reply_text("You said: " + user_says)
+
+
+def unknown(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="Eh...")
+    sleep(1)
+    bot.send_message(chat_id=update.message.chat_id, text="uhm...")
+    sleep(2)
+    bot.send_message(chat_id=update.message.chat_id, text="I'm sorry I don't understand that :(")
