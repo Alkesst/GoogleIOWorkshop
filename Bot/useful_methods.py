@@ -1,6 +1,18 @@
 from time import sleep
 
-from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram import InlineQueryResultArticle, InputTextMessageContent, ReplyKeyboardMarkup, ReplyKeyboardRemove
+
+custom_keyboard = [['Opción 1', 'Opción 2'], ['Opción 3', 'Opción 4'], ['Done!']]
+markup = ReplyKeyboardMarkup(custom_keyboard)
+
+
+def arriba(bot, update):
+    bot.send_message(chat_id=update.message.chat.id, text="Select your option!", reply_markup=markup)
+
+
+def done(bot, update):
+    reply_markup = ReplyKeyboardRemove()
+    bot.send_message(chat_id=update.message.chat.id, text="Nice! :)", reply_markup=reply_markup)
 
 
 def hello(bot, update):
@@ -27,20 +39,10 @@ def inline_caps(bot, update):
     if not query:
         return
     results = list()
-    results.append(
-        InlineQueryResultArticle(
-            id=query.upper(),
-            title='Caps',
-            input_message_content=InputTextMessageContent(query.upper())
-        )
-    )
-    results.append(
-        InlineQueryResultArticle(
-            id=query.lower(),
-            title='lower',
-            input_message_content=InputTextMessageContent(query.lower())
-        )
-    )
+    results.append(InlineQueryResultArticle(id=query.upper(), title='Caps',
+                                            input_message_content=InputTextMessageContent(query.upper())))
+    results.append(InlineQueryResultArticle(id=query.lower(), title='lower',
+                                            input_message_content=InputTextMessageContent(query.lower())))
     bot.answer_inline_query(update.inline_query.id, results)
 
 
