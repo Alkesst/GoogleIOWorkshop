@@ -57,3 +57,19 @@ def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="uhm...")
     sleep(2)
     bot.send_message(chat_id=update.message.chat_id, text="I'm sorry I don't understand that :(")
+
+
+def option1(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="You selected the option 1")
+
+
+def option2(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="You selected the option 2")
+
+
+def option3(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="You selected the option 3")
+
+
+def option4(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="You selected the option 4")
