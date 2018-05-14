@@ -7,7 +7,7 @@ GDG Malaga's retransmission of the Google I/O the past
 8th of May. Before the retransmission I did a little workshop about
 Bots made with Python.
 
-Link to the workshop slides: Soon!
+Link to the workshop slides: [Link :)](https://drive.google.com/open?id=1gf2X7STMCPofyAqK8nyVi1O4cRwkL8VTXPK1jjdIEMo)
 
 ##### Requirements
 - Python or Docker
